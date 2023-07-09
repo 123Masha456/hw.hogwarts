@@ -1,4 +1,4 @@
-public class Hogwarts {
+public abstract class Hogwarts {
     private String name;
     private String surname;
     private String faculty;
@@ -59,7 +59,20 @@ public class Hogwarts {
                 + " фамилия " + this.surname + ";"
                 + " факультет " + this.faculty + ";"
                 + " мощность колдовства " + this.magicPower + ";"
-                + " трансгрессия на " + this.trancePower;
+                + " трансгрессия на " + this.trancePower + ";";
+    }
+
+    public void compareToStudentInHogwarts(Hogwarts hogwartsStudent) {
+        int sumThis = this.magicPower + this.trancePower;
+        int sumHogwartsStudent = hogwartsStudent.getMagicPower() + hogwartsStudent.getTrancePower();
+        if (sumThis > sumHogwartsStudent) {
+            System.out.println(this.getName() + " сильнее " + hogwartsStudent.getName());
+        }
+        if (sumThis < sumHogwartsStudent) {
+            System.out.println(hogwartsStudent.getName() + " сильнее " + this.getName());
+        } else {
+            System.out.println("Студенты равны по силе");
+        }
     }
 }
 

@@ -46,16 +46,28 @@ public class Kogtevran extends Hogwarts {
         this.creativity = creativity;
     }
 
-    @Override
-    public String toString() {
-        return "Имя " + getName() + ";"
-                + " фамилия " + getSurname() + ";"
-                + " факультет " + getFaculty() + ";"
-                + " мощность колдовства " + getMagicPower() + ";"
-                + " трансгрессия на " + getTrancePower() + ";"
+
+    public String toStringKogtevran() {
+
+        return "Когтевран{ " + super.toString()
                 + " ум " + getMind() + ";"
                 + " мудрость " + getWisdom() + ";"
                 + " остроумие " + getWit() + ";"
-                + " креативность " + getCreativity();
+                + " креативность " + getCreativity() + "}";
+
+    }
+
+    public void compareToStudentInKogtevran(Kogtevran kogtevranStudent) {
+        int sumThis = this.mind + this.wisdom + this.wit + this.creativity;
+        int sumKogtevranStudent = kogtevranStudent.getMind() + kogtevranStudent.getWisdom() + kogtevranStudent.getWit() + kogtevranStudent.getCreativity();
+        if (sumThis > sumKogtevranStudent) {
+            System.out.println(this.getName() + " сильнее " + kogtevranStudent.getName());
+        }
+        if (sumThis < sumKogtevranStudent) {
+            System.out.println(kogtevranStudent.getName() + " сильнее " + this.getName());
+        }
+        if (sumThis == sumKogtevranStudent) {
+            System.out.println("Студенты равны по силе");
+        }
     }
 }

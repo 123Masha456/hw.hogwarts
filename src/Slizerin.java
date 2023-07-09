@@ -57,17 +57,28 @@ public class Slizerin extends Hogwarts {
         this.power = power;
     }
 
-    @Override
-    public String toString() {
-        return "Имя " + getName() + ";"
-                + " фамилия " + getSurname() + ";"
-                + " факультет " + getFaculty() + ";"
-                + " мощность колдовства " + getMagicPower() + ";"
-                + " трансгрессия на " + getTrancePower() + ";"
+
+    public String toStringSlizerin() {
+        return "Слизерин{ " + super.toString()
                 + " хитрость " + getTrick() + ";"
                 + " решительность " + getResolve() + ";"
                 + " амбициозность " + getAmbition() + ";"
                 + " находчивость " + getSmart() + ";"
-                + " жажда власти " + getPower();
+                + " жажда власти " + getPower() + "}";
+    }
+
+    public void compareToStudentInSlizerin(Slizerin slizerinStudent) {
+        int sumThis = this.trick + this.resolve + this.ambition + this.smart + this.power;
+        int sumSlizerinStudent = slizerinStudent.getTrick() + slizerinStudent.getResolve() + slizerinStudent.getAmbition()
+                + slizerinStudent.getSmart() + slizerinStudent.getPower();
+        if (sumThis > sumSlizerinStudent) {
+            System.out.println(this.getName() + " сильнее " + slizerinStudent.getName());
+        }
+        if (sumThis < sumSlizerinStudent) {
+            System.out.println(slizerinStudent.getName() + " сильнее " + this.getName());
+        }
+        if (sumThis == sumSlizerinStudent) {
+            System.out.println("Студенты равны по силе");
+        }
     }
 }

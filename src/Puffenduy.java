@@ -37,15 +37,24 @@ public class Puffenduy extends Hogwarts {
         this.honesty = honesty;
     }
 
-    @Override
-    public String toString() {
-        return "Имя " + getName() + ";"
-                + " фамилия " + getSurname() + ";"
-                + " факультет " + getFaculty() + ";"
-                + " мощность колдовства " + getMagicPower() + ";"
-                + " трансгрессия на " + getTrancePower() + ";"
+    public String toStringPuffenduy() {
+        return "Пуффендуй{ " + super.toString()
                 + " трудолюбие " + getWork() + ";"
                 + " верность " + getBelief() + ";"
-                + " честность " + getHonesty();
+                + " честность " + getHonesty() + "}";
+    }
+
+    public void compareToStudentInPuffenduy(Puffenduy puffenduyStudent) {
+        int sumThis = this.work + this.belief + this.honesty;
+        int sumPuffenduyStudent = puffenduyStudent.getWork() + puffenduyStudent.getBelief() + puffenduyStudent.getHonesty();
+        if (sumThis > sumPuffenduyStudent) {
+            System.out.println(this.getName() + " сильнее " + puffenduyStudent.getName());
+        }
+        if (sumThis < sumPuffenduyStudent) {
+            System.out.println(puffenduyStudent.getName() + " сильнее " + this.getName());
+        }
+        if (sumThis == sumPuffenduyStudent) {
+            System.out.println("Студенты равны по силе");
+        }
     }
 }
